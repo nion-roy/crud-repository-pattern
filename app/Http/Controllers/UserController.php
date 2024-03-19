@@ -20,12 +20,10 @@ class UserController extends Controller
     return view('index', compact('users'));
   }
 
-
   public function create()
   {
     return view('create');
   }
-
 
   public function store(StoreUserRequest $request)
   {
@@ -41,9 +39,7 @@ class UserController extends Controller
 
   public function update(StoreUserRequest $request, $id)
   {
-    $validatedData = $request->validated();
-    $this->userRepository->update($id, $validatedData);
-    //$user = $this->userRepository->update($id, $request->validated());
+    $this->userRepository->update($id, $request->validated());
     return redirect()->back()->withSuccess('User update successfully.');
   }
 

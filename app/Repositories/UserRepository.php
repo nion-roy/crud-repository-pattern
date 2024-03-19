@@ -9,10 +9,10 @@ class UserRepository implements UserRepositoryInterface
 {
   public function all()
   {
-    return User::all();
+    return User::latest('id')->get();
   }
 
-  public function findById($id)
+  public function findById(int $id)
   {
     return User::find($id);
   }
@@ -22,14 +22,14 @@ class UserRepository implements UserRepositoryInterface
     return User::create($data);
   }
 
-  public function update($id, array $data)
+  public function update(int $id, array $data)
   {
     $user = User::findOrFail($id);
     $user->update($data);
     return $user;
   }
 
-  public function delete($id)
+  public function delete(int $id)
   {
     return User::destroy($id);
   }
