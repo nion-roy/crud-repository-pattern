@@ -38,7 +38,7 @@
 				<div class="col-md-6">
 					<form action="{{ route('user.update', $user->id) }}" method="post">
 						@csrf
-						@method('PATCH')
+						@method('PUT')
 
 						<div class="form-group mb-3">
 							<label for="name" class="form-label">Name</label>

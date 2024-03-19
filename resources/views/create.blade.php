@@ -41,14 +41,14 @@
 
 						<div class="form-group mb-3">
 							<label for="name" class="form-label">Name</label>
-							<input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Enter full name">
+							<input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}" placeholder="Enter full name">
 							@error('name')
 								<div class="text-danger">{{ $message }}</div>
 							@enderror
 						</div>
 						<div class="form-group mb-3">
 							<label for="email" class="form-label">Email</label>
-							<input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Enter email">
+							<input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" placeholder="Enter email">
 							@error('email')
 								<div class="text-danger">{{ $message }}</div>
 							@enderror
@@ -57,6 +57,13 @@
 							<label for="password" class="form-label">Password</label>
 							<input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Enter password">
 							@error('password')
+								<div class="text-danger">{{ $message }}</div>
+							@enderror
+						</div>
+						<div class="form-group mb-3">
+							<label for="image" class="form-label">Image</label>
+							<input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="image" placeholder="Enter image">
+							@error('image')
 								<div class="text-danger">{{ $message }}</div>
 							@enderror
 						</div>
