@@ -27,7 +27,7 @@ class StoreUserRequest extends FormRequest
       'name' => 'required|string|max:255',
       'email' => ['required', 'email', Rule::unique('users')->ignore($this->user)],
       'password' => 'required|min:8',
-      'image*' => 'required|image|mimes:jpeg,jpg,png|max:40000',
+      'image*' => 'required|mimes:png,jpg,jpeg|max:2048'
     ];
 
 

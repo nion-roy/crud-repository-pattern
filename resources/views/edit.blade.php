@@ -36,7 +36,7 @@
 
 
 				<div class="col-md-6">
-					<form action="{{ route('user.update', $user->id) }}" method="post">
+					<form action="{{ route('user.update', $user->id) }}" method="post" enctype="multipart/form-data">
 						@csrf
 						@method('PUT')
 
@@ -58,6 +58,13 @@
 							<label for="password" class="form-label">Password</label>
 							<input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" value="12345678" placeholder="Enter password">
 							@error('password')
+								<div class="text-danger">{{ $message }}</div>
+							@enderror
+						</div>
+						<div class="form-group mb-3">
+							<label for="image" class="form-label">Image</label>
+							<input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="image">
+							@error('image')
 								<div class="text-danger">{{ $message }}</div>
 							@enderror
 						</div>
