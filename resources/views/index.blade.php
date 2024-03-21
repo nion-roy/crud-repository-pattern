@@ -41,6 +41,8 @@
 						<th>SL</th>
 						<th>Name</th>
 						<th>Email</th>
+						<th>Image</th>
+						<th>Join</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -49,6 +51,8 @@
 						<th>SL</th>
 						<th>Name</th>
 						<th>Email</th>
+						<th>Image</th>
+						<th>Join</th>
 						<th>Action</th>
 					</tr>
 				</tfoot>
@@ -58,6 +62,8 @@
 							<td>{{ $key + 1 }}</td>
 							<td>{{ $user->name }}</td>
 							<td>{{ $user->email }}</td>
+							<td><img src="{{ asset($user->image) }}" alt="{{ $user->name }}" class="img-fluid" width="60px" height="60px"></td>
+							<td>{{ $user->created_at->diffForHumans() }}</td>
 							<td>
 								<div class="d-flex align-items-center gap-1">
 									<a href="{{ route('user.edit', $user->id) }}" class="btn btn-success btn-sm">Edit</a>
